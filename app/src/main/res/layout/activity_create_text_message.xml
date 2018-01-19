@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:weightSum="1">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/create_message_tool_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tool_bar"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/new_text_recipient"
+            style="@style/materialEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/recipient_text_field_label"
+
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/primary" />
+
+        <ListView
+            android:id="@+id/contact_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/new_text_phone"
+            style="@style/materialEditText"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/phone_number_hint"
+            android:inputType="phone"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/primary" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".4">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/new_text_date"
+                    style="@style/materialEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/date_hint"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/primary" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/at_symbol_label" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".4">
+
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/new_text_time"
+                    style="@style/materialEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/time_hint"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/primary" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/new_text_message"
+            style="@style/materialEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.17"
+            android:hint="@string/message_hint"
+            android:inputType="textMultiLine"
+
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/primary" />
+
+        <Button
+            android:id="@+id/new_text_btn"
+            style="@style/Material.Drawable.Ripple.Touch.Light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/primary"
+            android:gravity="center"
+
+            android:onClick="createTextMessage"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp"
+            android:text="@string/schedule_text_text_field_label"
+
+            android:textColor="#fff" />
+    </LinearLayout>
+</RelativeLayout>
